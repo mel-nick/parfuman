@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuList component MenuList component render 1`] = `
+<div
+  className="makeStyles-menu-1"
+  id="menu"
+>
+  <span
+    className="makeStyles-burgerMenuButton-4"
+    id="burgerMenuButton"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundImage": "url(burger-menu-button.png)",
+      }
+    }
+  />
+  <div
+    className="makeStyles-menuListContainer-2"
+  >
+    <ul
+      className="makeStyles-menuList-3"
+      id="menuList"
+    >
+      <li
+        className="makeStyles-closeButton-5"
+      />
+      <withRouter(Connect(Categories)) />
+    </ul>
+  </div>
+</div>
+`;

@@ -1,0 +1,218 @@
+html
+  head
+    title Email template
+    meta(http-equiv='Content-Type' content='text/html; charset=utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0 ')
+    meta(name='format-detection' content='telephone=no')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet')
+    style(type='text/css').
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-family: Roboto, sans-serif;
+        -webkit-text-size-adjust: 100% !important;
+        -ms-text-size-adjust: 100% !important;
+        -webkit-font-smoothing: antialiased !important;
+      }
+      .header-title {
+        padding: 20px 10px;
+        font-size: 30px;
+        text-align: center;
+      }
+
+      .shippingHeader {
+        padding-bottom: 12px;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 2px;
+        color: #fbeb59;
+        color: #f05;
+        text-transform: uppercase;
+      }
+
+      .shippingBody {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      .orderHeader {
+        padding: 12px 0;
+        font-size: 18px;
+        line-height: 24px;
+        color: #f05;
+        text-transform: uppercase;
+        letter-spacing:2px;
+      }
+
+      .orderBodyTitle {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 600;
+      }
+
+      .orderBody {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      .contactMessage {
+         margin-top: 35px;
+         font-size: 11px;
+      }
+
+      .thanksImg {
+        display: block;
+        width: 100%;
+      }
+
+      .footerSocial {
+        background: #343434;
+        padding: 30px;
+      }
+
+      .footerSocial-td {
+        padding-right: 20px
+      }
+      .footerSocial-td:last-child {
+        padding-right: 0 !important;
+      }
+      .footerSocial-a {
+        text-decoration: none;
+      }
+
+      .footerSocial-img {
+        display: block;
+        max-width: 24px;
+      }
+
+      .companyStatements {
+        background: #343434;
+        padding-bottom: 16px;
+      }
+      .companyStatements a {
+        color: #fff;
+      }
+
+      img {
+        display: block;
+      }
+
+      p {
+        margin: 0px !important;
+        padding: 0px !important;
+      }
+
+      table {
+        border-collapse: collapse;
+        mso-table-lspace: 0px;
+        mso-table-rspace: 0px;
+      }
+
+      td,
+      a,
+      span {
+        border-collapse: collapse;
+        mso-line-height-rule: exactly;
+      }
+
+      .ExternalClass * {
+        line-height: 100%;
+      }
+
+      .em_defaultlink a {
+        color: inherit !important;
+        text-decoration: none !important;
+      }
+
+      span.MsoHyperlink {
+        mso-style-priority: 99;
+        color: inherit;
+      }
+
+      span.MsoHyperlinkFollowed {
+        mso-style-priority: 99;
+        color: inherit;
+      }
+
+      @media screen and (max-width: 480px) {
+        .em_main_table {
+          width: 100% !important;
+        }
+
+        .em_wrapper {
+          width: 100% !important;
+        }
+
+        .em_hide {
+          display: none !important;
+        }
+
+        .em_img {
+          width: 100% !important;
+          height: auto !important;
+        }
+
+        .em_h20 {
+          height: 20px !important;
+        }
+
+        .em_padd {
+          padding: 20px 10px !important;
+        }
+
+        .em_text1 {
+          font-size: 16px !important;
+          line-height: 24px !important;
+        }
+
+        u+.em_body .em_full_wrap {
+          width: 100% !important;
+          width: 100vw !important;
+        }
+      }
+
+  body.em_body
+    table(class='em_full_wrap' valign='top' width='100%' cellspacing='0' cellpadding='0' align='center')
+      tbody
+        tr
+          td(valign='top' align='center')
+            table(class='em_main_table' width='100%' align='center')
+              //- Header section
+              tr
+                td.header-title ParfuMan
+              tbody
+                tr
+                  td(style={padding: '35px 50px'} class="em_padd" valign="top" align="center")
+                    table(width="100%" align="center")
+                      tbody
+                        tr
+                          td.shippingHeader(valign="top" align="center") Ваш адрес доставки
+                        tr
+                          td.shippingBody(valign="top")= 'Имя и Фамилия: ' + fullname
+                        tr
+                          td.shippingBody(valign="top")= 'Адрес: ' + address
+                        tr
+                          td.shippingBody(valign="top")= 'Город: ' + city
+                        tr
+                          td.shippingBody(valign="top")= 'E-mail: ' + email
+                        tr
+                          td.shippingBody(valign="top")= 'Моб. телефон: ' + phone
+
+                        tr
+                          td.orderHeader(valign="top" align="center") Ваш заказ
+                        tr
+                          table(width='100%' cellspacing='20px' cellpadding='20px')
+                            each item, index in orderTotal
+                              tr
+                                td.orderBodyTitle(valign="top")= item.title
+                              tr
+                                td.orderBody(valign="top")= `Брэнд: ${item.brand}`
+                              tr
+                                td.orderBody(valign="top")= `Категория: ${item.category}`
+                              tr
+                                td.orderBody(valign="top")= `Количество: ${item.quantity}`
+                        tr
+                          td.contactMessage(valign="top" align="center") Если возникнут какие-либо проблемы с этим заказом, вы можете связаться с нами напрямую по этому адресу электронной почты parfuman@gmail.com или позвонить по номеру 0991239912
+        tr
+          td(valign="top" align="center")
+            img(class="em_img thanksImg" alt="img" width='100%' src="cid:order")

@@ -1,0 +1,12 @@
+.cart-header-nav-link {
+  color: rgb(138, 138, 138);
+  font-size: 14px;
+}
+.cart-header-nav-link-black {
+  color: black;
+}
+@media(max-width: 320px) {
+  .cart-header-nav-link.cart-header-nav-link-black {
+    display: none;
+  }
+}

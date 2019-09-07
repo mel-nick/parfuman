@@ -1,0 +1,84 @@
+$primary-color: #444
+$secondary-color: #777
+$light-color: #e5e5e5
+$total: #ff9800
+
+.checkoutCartMain
+  width: 100%
+  max-width: 100%
+  min-height: 320px
+  max-height: 800px
+  padding-top: 50px
+  box-sizing: border-box
+  background: #fff
+  border: 1px solid $light-color
+
+  .checkoutCartHeader
+    position: relative
+    height: 100%
+
+    .expandCheckoutCart
+      position: absolute
+      top: -30px
+      right: 0
+      display: none
+      z-index: 2
+      padding-right: 20px
+      box-sizing: border-box
+      text-align: right
+      cursor: pointer
+
+  &.fixed
+    position: fixed
+    top: 80px
+    bottom: 160px
+    max-width: inherit
+    overflow-x: hidden
+    overflow-y: scroll
+    background: #fff
+
+    &::-webkit-scrollbar
+      width: 0
+
+  .checkoutSummary
+    position: absolute
+    top: -50px
+    z-index: 1
+    display: flex
+    justify-content: space-between
+    width: 100%
+    padding: 20px 15px
+    box-sizing: border-box
+    background: rgb(240, 240, 240)
+    font-size: 20px
+    font-weight: 600
+    & > span
+      color: $total
+
+@media (max-width: 959.5px)
+
+  .checkoutCartMain
+    min-height: 0
+    margin-bottom: 20px
+    box-shadow: none
+
+    .checkoutCartHeader
+      position: relative
+
+      .expandCheckoutCart
+        display: block
+
+    &.fixed
+      position: relative
+      top: 0
+
+    .checkoutCartMainContent
+      padding: 12px
+      flex-direction: column
+      display: none
+
+      &.expand
+        display: flex
+
+    .checkoutSummary
+      padding-right: 60px

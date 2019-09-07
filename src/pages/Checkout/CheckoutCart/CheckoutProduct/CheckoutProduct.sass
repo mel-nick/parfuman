@@ -1,0 +1,53 @@
+$primary-color: #444
+$secondary-color: #777
+$light-color: #e5e5e5
+
+@mixin title
+  color: $primary-color
+  font-weight: 700
+
+.checkoutProduct
+  position: relative
+  padding: 20px 8px
+
+  &:not(:last-child)::before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+    width: 80%
+    height: 1px
+    background: $light-color
+
+  &-img
+    flex: 1
+    height: 100px
+    padding: 8px
+    margin-bottom: 10px
+    img
+      height: inherit
+
+  &-info
+    margin-left: 8px
+    flex: 1
+
+    & > div:first-child, & > div:last-child
+      @include title
+    & > div:first-child
+      font-size: 1.1rem
+
+    & a
+      @include title
+      text-decoration: underline
+      font-size: 1.1rem
+
+    *
+      color: $secondary-color
+      padding: 2px
+      box-sizing: border-box
+
+@media (max-width: 959.9px)
+  .checkoutProduct
+    &::before
+      width: 90%

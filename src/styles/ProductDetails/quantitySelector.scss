@@ -1,0 +1,63 @@
+
+.quantity-selector{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    height: calcFluidSize(30, 60, 320, 768);
+    border: 2px solid rgb(240, 240, 240);
+    font-family: "Dosis",sans-serif;
+    box-sizing: border-box;
+    height: 100%;
+    &__quantity {
+        width: 80%;
+        border: none;
+        border-right: 2px solid rgb(240, 240, 240);
+        text-align: center;
+        line-height: calcFluidSize(30, 60, 320, 768);
+        font-family: "Dosis",sans-serif;
+        font-size: 15px;
+        cursor: pointer;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+.quantity-change-container {
+    width: 20%;
+    &__increment {
+        height: 50%;
+        border-bottom: 2px solid rgb(240, 240, 240);
+        box-sizing: border-box;
+        text-align: center;
+        cursor: pointer;
+        line-height: calcFluidSize(15, 30, 320, 768);
+    }   
+    &__decrement {
+        height: 50%;
+        cursor: pointer;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: calcFluidSize(15, 30, 320, 768);
+    }
+}
+
+@media (min-width: 769px) {
+    .quantity-selector{
+        width: 80px;
+        margin: 0;
+        &__quantity {
+            width: 60%;
+            line-height: 60px;
+        }
+    }
+    .quantity-change-container {
+        width: 40%;
+        &__increment {
+            line-height: 30px;
+        }   
+        &__decrement {
+            line-height: 30px;
+        }
+    }
+}
+

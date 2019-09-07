@@ -1,0 +1,123 @@
+.main{
+   background-color: rgb(246, 246, 246);
+}
+
+.product-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    padding: 0 25px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.photos-block{
+    width: 100%;
+    padding-top: 10px;
+    &__primary-img{
+    width: 80%;
+    height: calcFluidSize(190, 515, 320, 768);
+    margin: 0 auto;
+    background-size: contain;;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+}
+.info-block {
+    width: 100%;
+}
+
+.to-cart-container {
+    margin: 30px 0;
+    &__availibility{
+        width: calcFluidSize(100, 140, 320, 768);
+        margin: 0 auto;
+        border: 2px solid rgb(19, 226, 19);
+        color: rgb(19, 226, 19);
+        font-size: calcFluidSize(11, 14, 320, 768);
+        text-align: center;
+        font-weight: 500;
+        font-family: "Dosis",sans-serif;
+        padding: calcFluidSize(7, 11, 320, 768) 0;
+        &_out-of-stock {
+            border: 2px solid red;
+            color: red;
+            width: calcFluidSize(100, 140, 320, 768);
+            margin: 0 auto;
+            font-size: calcFluidSize(11, 14, 320, 768);
+            text-align: center;
+            font-weight: 500;
+            font-family: "Dosis",sans-serif;
+            padding: calcFluidSize(7, 11, 320, 768) 0;
+            margin-top: 15px;
+        }
+    }
+}
+
+@media(min-width: 769px) {
+    .background {
+        height: 200px;
+    }
+    .product-container {
+        display: flex;
+    }
+    .photos-block {
+        width: 50%;
+            &__primary-img{
+            height: calcFluidSize(280, 440, 769, 1200);
+        }
+    }
+    .info-block {
+        width: 50%;
+    }
+
+    .to-cart-container {
+        display: flex;
+        align-items: center;
+        height: 60px;
+        margin: calcFluidSize(30, 55, 769, 1200) 0;
+        &__availibility{
+            width: auto;
+            margin: 0;
+            font-size: calcFluidSize(12, 15, 769, 1200);
+            padding:  calcFluidSize(10, 12, 769, 1200) calcFluidSize(15, 18, 769, 1200);
+            &_out-of-stock {
+                width: auto;
+                margin: 0;
+                font-size: calcFluidSize(12, 15, 769, 1200);
+                padding:  calcFluidSize(10, 12, 769, 1200) calcFluidSize(15, 18, 769, 1200);
+            }
+        }
+    }
+}
+
+@media(min-width: 1201px) {
+    .photos-block {
+        &__primary-img{
+            height: 440px;
+        }
+    }
+    .to-cart-container {
+        margin: 55px 0;
+        &__availibility{
+            font-size: 15px;
+            padding:  12px 18px;
+            &_out-of-stock {
+                font-size: 15px;
+                padding: 12px 18px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

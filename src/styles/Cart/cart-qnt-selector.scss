@@ -1,0 +1,81 @@
+.qnt-selector{
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  height: 30px;
+  border: 2px solid rgb(240, 240, 240);
+  font-family: "Dosis", Roboto, sans-serif;
+  box-sizing: border-box;
+  &-input {
+    all: unset;
+    -moz-appearance: textfield;
+    width: 100%;
+    text-align: center;
+    border-right: 1px solid #f0f0f0; 
+  }
+  &-input:focus {
+    border: 1px solid orange;
+    box-shadow: 0 0 10px rgba(248, 149, 1, 0.6);
+  }
+}
+.qnt-change-container {
+  display: none;
+  width: 40%;
+  &__increment {
+      height: 50%;
+      border-bottom: 2px solid rgb(240, 240, 240);
+      box-sizing: border-box;
+      text-align: center;
+      cursor: pointer;
+      line-height: calcFluidSize(15, 30, 320, 768);
+  }   
+  &__decrement {
+      height: 50%;
+      cursor: pointer;
+      box-sizing: border-box;
+      text-align: center;
+      line-height: calcFluidSize(15, 30, 320, 768);
+  }
+}
+@media (min-width: 479px) {
+  .qnt-selector {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    &-input {
+      line-height: 60px;
+    }
+    
+    .qnt-change-container {
+      display: block;
+      width: 50%;
+      &__increment {
+        line-height: 30px;
+      }   
+      &__decrement {
+        line-height: 30px;
+      }
+    }
+  } 
+}
+
+@media (min-width: 769px) {
+  .qnt-selector{
+      width: 80px;
+      margin: 0;
+      &-input {
+        width: 60%;
+        line-height: 60px;
+      }
+  }
+  .qnt-change-container {
+    width: 50%;
+    &__increment {
+      line-height: 30px;
+    }   
+    &__decrement {
+      line-height: 30px;
+    }
+  }
+}
