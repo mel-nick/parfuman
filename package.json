@@ -42,7 +42,7 @@
   },
   "scripts": {
     "app": "cd ./build && npm start",
-    "heroku-postbuild": "npm-run-all -p server app",
+    "heroku-postbuild": "npm-run-all -p build server app",
     "start": "react-scripts start",
     "server": "cd ./server && nodemon server",
     "dev": "npm-run-all -p server start",
