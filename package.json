@@ -1,6 +1,9 @@
 {
   "name": "final-project-e-shop",
   "version": "0.1.0",
+  "engines": {
+    "node": "10.14.2"
+  },
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
