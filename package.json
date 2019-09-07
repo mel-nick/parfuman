@@ -42,6 +42,7 @@
   },
   "scripts": {
     "app": "cd ./build && npm start",
+    "heroku-pretbuild": "cd ./server && npm install",
     "heroku-postbuild": "npm-run-all -p build server app",
     "start": "react-scripts start",
     "server": "cd ./server && nodemon server",
