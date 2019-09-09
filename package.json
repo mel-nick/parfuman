@@ -1,5 +1,5 @@
 {
-  "name": "final-project-e-shop",
+  "name": "e-shop",
   "version": "0.1.0",
   "engines": {
     "node": "10.14.2"
@@ -41,9 +41,8 @@
     "validator": "^11.0.0"
   },
   "scripts": {
-    "app": "cd ./build && npm start",
     "heroku-pretbuild": "cd ./server && npm install",
-    "heroku-postbuild": "npm-run-all -p build server app",
+    "heroku-postbuild": "npm-run-all -p start server",
     "start": "react-scripts start",
     "server": "cd ./server && nodemon server",
     "dev": "npm-run-all -p server start",
