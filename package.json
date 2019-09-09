@@ -53,8 +53,11 @@
     "pug": "^2.0.4"
   },
   "scripts": {
-    "heroku-prebuild": "node index.js",
-    "heroku-postbuild": "react-scripts build"
+    "build": "react-scripts build",
+    "start": "node index.js",
+    "test": "react-scripts test",
+    "lint": "eslint src",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app",
