@@ -54,7 +54,7 @@
   },
   "scripts": {
     "build": "react-scripts build",
-    "start": "react-scripts start",
+    "start": "react-scripts start server",
     "server": "node index.js",
     "dev": "npm-run-all -p server start",
     "test": "react-scripts test",

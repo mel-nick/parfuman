@@ -1,14 +1,19 @@
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const config = require('./dbconfig/database');
 const passport = require('passport');
 // const PORT = 5000;
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 3000
 const app = express();
+app.use(express.static('build'));
+
 
 // Note model
 const User = require('./dbmodels/user');
+// const User = require('./dbmodels/user');
+
 
 
 // Product model
