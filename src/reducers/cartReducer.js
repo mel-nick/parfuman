@@ -27,7 +27,6 @@ export default function (state = initialState, action) {
         else return item;
       });
 
-      // localStorage.setItem('parfumanCart', JSON.stringify(newArj))
       return newArj;
     }
 
@@ -40,7 +39,6 @@ export default function (state = initialState, action) {
         else return item;
       });
 
-      // localStorage.setItem('parfumanCart', JSON.stringify(newArj))
       return newArj;
     }
 
@@ -58,7 +56,6 @@ export default function (state = initialState, action) {
         else {return item;}
       });
 
-      // localStorage.setItem('parfumanCart', JSON.stringify(newArj))
       return newArj;
     }
 
@@ -67,7 +64,6 @@ export default function (state = initialState, action) {
         return (item.code !== action.payload);
       });
 
-      // localStorage.setItem('parfumanCart', JSON.stringify(newArj))
       return newArj;
     }
     case ADD_CART_ITEM: {
@@ -78,7 +74,6 @@ export default function (state = initialState, action) {
         return item.code !== action.payload.code
       })
 
-      // localStorage.setItem('parfumanCart', JSON.stringify([...newArj, action.payload]))
       return [...newArj, action.payload]
     }
     case EMPTY_CART:

@@ -88,4 +88,3 @@ showCategory() {
   }
 }
 export default withStyles(styles)(CategoriesList);
-// export default CategoriesList;

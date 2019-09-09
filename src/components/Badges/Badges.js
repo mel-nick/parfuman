@@ -7,10 +7,7 @@ import {withTheme, withStyles} from '@material-ui/core/styles';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const styles = (theme) => ({
-    badgeLinkWrap: {
-        // position: 'absolute',
-        // right: '50px',
-    },
+   
     badgeWrapBlock: {
         outline: 'none !important',
         color: theme.palette.primary.dark,
@@ -28,9 +25,7 @@ const styles = (theme) => ({
         height: '24px'
     },
     '@media (max-width: 767px)': {
-        badgeLinkWrap: {
-            // right: '75px',
-        }
+       
     }
 });
 
@@ -59,16 +54,3 @@ const mapStoreToProps = (store) => {
        }
 }
 export default connect(mapStoreToProps)(withStyles(styles)(CustomizedBadges));
-// function BadgesWrap({theme}) {
-//     return <CustomizedBadges theme={theme}/>
-// }
-
-// const Badges = withTheme(BadgesWrap);
-
-// export default class BadgesElem extends Component {
-//     state = {};
-//
-//     render() {
-//         return (<Badges style={{paddingTop: '100px'}}/>)
-//     }
-// }

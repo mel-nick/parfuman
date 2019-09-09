@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
             justifyContent: 'center',
             minWidth: '100%',
             zIndex: '2',
-            // transform: 'translate(0, 25px)',
             borderTop: '1px solid' + theme.palette.secondary.main,
             marginTop: '1%'
         },
@@ -37,7 +36,6 @@ const useStyles = makeStyles((theme) => ({
                 marginTop: '0',
                 position: 'absolute',
                 right: '20px',
-                // transform: 'translate(0, 0)',
                 borderTop: '0'
             },
             closeButton: {
@@ -62,31 +60,18 @@ const useStyles = makeStyles((theme) => ({
                 padding: '30px 25px 0 0',
                 position: 'absolute',
                 top: '62px',
-                // left: '3%',
                 opacity: '0',
                 borderRadius: '3px',
                 backgroundColor: theme.palette.primary.main,
                 transition: 'all 0.5s ease',
                 boxShadow: '0 0 5px 1px rgba(0, 0, 0, 0.2)',
 
-                // '&:before': {
-                //     content: '""',
-                //     display: 'flex',
-                //     position: 'relative',
-                //     width: '20px',
-                //     height: '20px',
-                //     backgroundImage: 'url(' + closeButton + ')',
-                //     backgroundPosition: 'center',
-                //     backgroundRepeat: 'no-repeat',
-                //     backgroundSize: 'cover'
-                // }
+               
             },
             burgerMenuButton: {
                 display: 'flex',
                 width: '24px',
                 height: '24px',
-                // right: '0',
-                // backgroundImage: 'url(' + burgerMenuButtonImg + ');',
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
@@ -99,7 +84,6 @@ const useStyles = makeStyles((theme) => ({
 let toggleMenu = () => {
     const menuList = document.querySelector('#menuList');
     const burgerButton = document.querySelector('#burgerMenuButton');
-    // console.log(menuList.child);
     if (getComputedStyle(menuList).getPropertyValue('display') === 'none') {
         menuList.style.cssText = 'display: flex; max-height: 450px; opacity: 0.1; left: -30%';
         burgerButton.style.backgroundImage = 'url(' + closeButton + ')';
@@ -138,7 +122,6 @@ let toggleMenu = () => {
 };
 
 let closeMenu = () => {
-    // document.querySelector('#burgerMenuButton').click();
 }
 
 document.addEventListener('click', (event) => {

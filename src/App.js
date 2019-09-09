@@ -8,23 +8,17 @@ import {getLocalCart} from './actions/getLocalCart';
 import {getDbCart} from './actions/getDbCart';
 import saveCartToDb from './actions/saveCartToDb';
 import Box from '@material-ui/core/Box';
-// import { makeStyles, Switch } from '@material-ui/core';
 import {setCurrentUser, logoutUser} from './actions/authentication';
 import Account from './components/Account';
-// import Login from './components/Login';
-// import Home from './components/Home';
 import Register from './components/Register';
-// import Slider from "./components/Slider/Slider";
 import MainPage from "./components/MainPage/MainPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Cart from './pages/Cart/Cart';
 import ProductDetails from './pages/ProductDetails'
 import ScrollUpButton from "react-scroll-up-button";
-// import SignInUp from './components/SignInUp/SignInUp';
 import setAuthToken from './setAuthToken';
 import store from './store';
-// import img from './0r7qN8U.png';
 import Checkout from './pages/Checkout/Checkout';
 import Profile from './pages/Profile/Profile';
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -36,15 +30,12 @@ const newHistory = createBrowserHistory();
 const styles = (theme) => ({
   page: {
     width: '100%',
-    // backgroundImage: 'url(' + img + ');'
-    //backgroundColor: 'red'
-  },
+   },
 
   containerBox: {
     width: '100%',
     fontFamily: 'Roboto, sans-serif',
 
-    // backgroundImage: 'url(' + img + ');'
   },
 });
 
@@ -84,10 +75,8 @@ class App extends Component {
       const userId = this.props.auth.user.id;
       axios.get('/cart/' + userId)
       .then(res => {
-          // if (res.data) {
               this.props.dispatch(getDbCart(res.data.cartProducts));
               localStorage.setItem('parfumanCart', JSON.stringify(res.data.cartProducts));
-          // }
       })
       .catch(error => {
           console.log(error);
@@ -101,7 +90,6 @@ class App extends Component {
       const userId = this.props.auth.user.id
       axios.get('/cart/' + userId)
       .then(res => {
-          // console.log(res.data.cartProducts);
           if (res.data) {
               this.props.dispatch(getDbCart(res.data.cartProducts));
               localStorage.setItem('parfumanCart', JSON.stringify(res.data.cartProducts));
@@ -112,17 +100,7 @@ class App extends Component {
       });            
     }
       
-    //Save cart to DB after logout:
-    // if (!this.props.auth.isAuthenticated && this.props.auth.isCartGeted) {
-    //   const data = {
-    //     cartItems: this.props.cartItems,
-    //     currentUserId: this.props.auth.user.id,
-    //     currentUserName: this.props.auth.user.name
-    //   }
-    //   saveCartToDb(data);
-    //   // this.props.dispatch({type: LOGOUT});
-    // }
-
+    
     // Message for save cart to DB on "unload" event:
     if (this.props.cartItems.length != 0 && this.props.auth.isAuthenticated) {
       window.addEventListener("beforeunload", function(e) {
@@ -134,7 +112,6 @@ class App extends Component {
         (e || window.event).returnValue = confirmationMessage;
         return confirmationMessage; 
         }, false);
-      // navigator.sendBeacon("/user_cart", data);});
     }
 
     //for save cart on "unload" event:
