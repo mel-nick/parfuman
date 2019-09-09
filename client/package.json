@@ -41,11 +41,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "server": "cd ../server && nodemon server",
-    "dev": "npm-run-all -p server start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint": "eslint src",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -68,7 +65,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000",
   "devDependencies": {
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
