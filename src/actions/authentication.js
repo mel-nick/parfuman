@@ -56,7 +56,7 @@ export const logoutUser = history => (dispatch) => {
 
 export const changeAddresses = (data, user_id) => async dispatch => {
   const res = await axios.post('user_customize', { data, user_id })
-  console.log(res)
+  // console.log(res)
   const isSuccess = res.data.user_customize === 'success'
   dispatch({ type: CHANGE_USER_ADDRESSES, payload: {isSuccess, addresses: data.addresses }})
 }

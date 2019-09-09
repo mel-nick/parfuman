@@ -68,7 +68,7 @@ class CategoriesList extends Component {
   }
 
 showCategory() {
-      console.log(_.uniqBy(this.state.products, 'category'));
+      // console.log(_.uniqBy(this.state.products, 'category'));
     return (
         _.uniqBy(this.state.products, 'category').map((item) => (
           <li key={item.code} className={`${this.props.classes.listItem} ${'menu-list--item'}`}>

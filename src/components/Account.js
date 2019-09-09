@@ -107,7 +107,7 @@ class Account extends Component {
     }
 
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         const {isAuthenticated, user} = this.props.auth;
         const authLinks = (
             <div className={this.props.classes.personalAccountWrap}>
