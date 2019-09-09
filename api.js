@@ -18,12 +18,12 @@ const Cart = require('./dbmodels/cart');
 
 require('dotenv').config();
 
-router.get('/api/find/:id', function (req, res) {
+router.get('/find/:id', function (req, res) {
     Product.findOne({ _id: req.params.id })
         .then(data => { res.send(data) })
     })
 
-router.post('/api/add-product', function (req, res) {
+router.post('/add-product', function (req, res) {
     const newProduct = new Product({
         brand: req.body.brand,
         title: req.body.title,
@@ -39,7 +39,7 @@ router.post('/api/add-product', function (req, res) {
         .then(product => { res.json(product) });
 })
 
-router.post('/api/register', function (req, res) {
+router.post('/register', function (req, res) {
 
     const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -85,7 +85,7 @@ router.post('/api/register', function (req, res) {
     });
 });
 
-router.post('/api/login', (req, res) => {
+router.post('/login', (req, res) => {
 
     const { errors, isValid } = validateLoginInput(req.body);
 
@@ -130,7 +130,7 @@ router.post('/api/login', (req, res) => {
         });
 });
 
-router.get('/api/me', passport.authenticate('jwt', { session: false }), (req, res) => {
+router.get('/me', passport.authenticate('jwt', { session: false }), (req, res) => {
     return res.json({
         id: req.user.id,
         name: req.user.name,
@@ -138,23 +138,23 @@ router.get('/api/me', passport.authenticate('jwt', { session: false }), (req, re
     });
 });
 
-router.get("/api/categories/", (req,res)=>{
+router.get("/categories/", (req,res)=>{
   Product.find({})
     .then(product => res.send(product) );
 });
-router.get("/api/categories/:alias", (req,res)=>{
+router.get("/categories/:alias", (req,res)=>{
     Product.find({ alias: req.params.alias })
     .then(product => res.send(product) );
 });
 
 // post prod
-router.post("/api/addprod", (req,res)=>{
+router.post("/addprod", (req,res)=>{
     Product.create(req.body)
     .then(product => res.send(product) );
 });
 
 //put
-router.put("/api/users/:id", (req, res) => {
+router.put("/users/:id", (req, res) => {
     User.findByIdAndUpdate({ _id: req.params.id }, req.body)
         .then(() => {
             User.findOne({ _id: req.params.id })
@@ -163,12 +163,12 @@ router.put("/api/users/:id", (req, res) => {
 });
 
 //delete
-router.delete("/api/users/:id", (req, res) => {
+router.delete("/users/:id", (req, res) => {
     User.deleteOne({ _id: req.params.id })
         .then(user => res.send(user) );
 });
 
-router.post("/api/checkout", async (req, res) => {
+router.post("/checkout", async (req, res) => {
     const { user_id, order, address, card } = req.body.data
 
 
@@ -209,7 +209,7 @@ router.post("/api/checkout", async (req, res) => {
     })
 })
 
-router.post("/api/user_customize", (req, res) => {
+router.post("/user_customize", (req, res) => {
     const { data, user_id } = req.body
 
     if(data.prevpassword && data.newpassword){
@@ -244,7 +244,7 @@ router.post("/api/user_customize", (req, res) => {
     }
 })
 
-router.post("/api/user_addresses", async (req, res) => {
+router.post("/user_addresses", async (req, res) => {
     const { user_id } = req.body
     const user = await User.findById({ '_id': user_id });
 
@@ -253,7 +253,7 @@ router.post("/api/user_addresses", async (req, res) => {
     })
 })
 
-router.post("/api/user_orders", async (req, res) => {
+router.post("/user_orders", async (req, res) => {
     const { user_id } = req.body
     const orders = []
     const userOrders = await Order.find({
@@ -268,7 +268,7 @@ router.post("/api/user_orders", async (req, res) => {
 })
 
 //get user cart:
-router.get('/api/cart/:userId', (req, res) => {
+router.get('/cart/:userId', (req, res) => {
     Cart.findOne({userId: req.params.userId}, function(err, result){     
     if(err) return console.log(err);   
     res.send(result);
@@ -276,7 +276,7 @@ router.get('/api/cart/:userId', (req, res) => {
 });
 
 //put user cart:
-router.put("/api/user_cart", (req, res) => {
+router.put("/user_cart", (req, res) => {
     Cart.updateOne(
         {userId: req.body.currentUserId},        
         {cartProducts: req.body.cartItems},
