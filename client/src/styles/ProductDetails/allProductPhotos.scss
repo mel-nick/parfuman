@@ -1,0 +1,35 @@
+.all-photos-block {
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    justify-content: space-around;
+    margin-top: 15px;
+    height: calcFluidSize(60, 120, 320, 768);
+    &__image {
+        display: block;
+        width: 30%;
+        border: 2px solid rgb(240, 240, 240);
+        background-size: contain;;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        &_active {
+            border-bottom: 1px solid #000;
+        }
+        &:hover {
+            border: 2px solid gold;
+        }
+    }
+}
+
+@media(min-width: 769px) {
+    .all-photos-block {
+        height: calcFluidSize(100, 125, 769, 1200);
+    }
+}
+
+@media(min-width: 1201px) {
+    .all-photos-block {
+        height: 125px;
+    }
+}

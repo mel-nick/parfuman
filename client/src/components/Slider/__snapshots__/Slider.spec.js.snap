@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider component Slider component render 1`] = `
+<Container
+  className="p-0"
+  fluid={true}
+  tag="div"
+>
+  <Carousel
+    activeItem={1}
+    className="z-depth-1 mt-3"
+    interval={6000}
+    length={6}
+    onHoverStop={true}
+    showControls={true}
+    showIndicators={true}
+    tag="div"
+  >
+    <CarouselInner
+      tag="div"
+    >
+      <CarouselItem
+        itemId="1"
+        tag="div"
+      >
+        <View
+          cascade={false}
+          className=""
+          hover={false}
+          rounded={false}
+          src=""
+          tag="div"
+          waves={false}
+          zoom={false}
+        >
+          <img
+            alt="First slide"
+            className="d-block w-100"
+            src="9.jpg"
+          />
+          <Mask
+            className=""
+            overlay="black-light"
+            pattern=""
+            tag="div"
+          />
+        </View>
+        <CarouselCaption
+          tag="div"
+        >
+          <h3
+            className="h3-responsive"
+          >
+            Будь желанным. Будь собой.
+          </h3>
+        </CarouselCaption>
+      </CarouselItem>
+      <CarouselItem
+        itemId="2"
+        tag="div"
+      >
+        <View
+          cascade={false}
+          className=""
+          hover={false}
+          rounded={false}
+          src=""
+          tag="div"
+          waves={false}
+          zoom={false}
+        >
+          <img
+            alt="Second slide"
+            className="d-block w-100"
+            src="2.jpg"
+          />
+          <Mask
+            className=""
+            overlay="black-light"
+            pattern=""
+            tag="div"
+          />
+        </View>
+        <CarouselCaption
+          tag="div"
+        >
+          <h3
+            className="h3-responsive"
+          >
+            Ворвись в свой день.
+          </h3>
+        </CarouselCaption>
+      </CarouselItem>
+      <CarouselItem
+        itemId="3"
+        tag="div"
+      >
+        <View
+          cascade={false}
+          className=""
+          hover={false}
+          rounded={false}
+          src=""
+          tag="div"
+          waves={false}
+          zoom={false}
+        >
+          <img
+            alt="First slide"
+            className="d-block w-100"
+            src="4.jpg"
+          />
+          <Mask
+            className=""
+            overlay="black-light"
+            pattern=""
+            tag="div"
+          />
+        </View>
+        <CarouselCaption
+          tag="div"
+        >
+          <h3
+            className="h3-responsive"
+          >
+            Для зверя, который таится в Вас.
+          </h3>
+        </CarouselCaption>
+      </CarouselItem>
+      <CarouselItem
+        itemId="4"
+        tag="div"
+      >
+        <View
+          cascade={false}
+          className=""
+          hover={false}
+          rounded={false}
+          src=""
+          tag="div"
+          waves={false}
+          zoom={false}
+        >
+          <img
+            alt="First slide"
+            className="d-block w-100"
+            src="10.jpg"
+          />
+          <Mask
+            className=""
+            overlay="black-light"
+            pattern=""
+            tag="div"
+          />
+        </View>
+        <CarouselCaption
+          tag="div"
+        >
+          <h3
+            className="h3-responsive"
+          >
+            Это только аромат. Остальное – в твоих руках
+          </h3>
+        </CarouselCaption>
+      </CarouselItem>
+      <CarouselItem
+        itemId="5"
+        tag="div"
+      >
+        <View
+          cascade={false}
+          className=""
+          hover={false}
+          rounded={false}
+          src=""
+          tag="div"
+          waves={false}
+          zoom={false}
+        >
+          <img
+            alt="First slide"
+            className="d-block w-100"
+            src="8.jpg"
+          />
+          <Mask
+            className=""
+            overlay="black-light"
+            pattern=""
+            tag="div"
+          />
+        </View>
+        <CarouselCaption
+          tag="div"
+        >
+          <h3
+            className="h3-responsive"
+          >
+            Сопротивление бесполезно.
+          </h3>
+        </CarouselCaption>
+      </CarouselItem>
+      <CarouselItem
+        itemId="6"
+        tag="div"
+      >
+        <View
+          cascade={false}
+          className=""
+          hover={false}
+          rounded={false}
+          src=""
+          tag="div"
+          waves={false}
+          zoom={false}
+        >
+          <img
+            alt="First slide"
+            className="d-block w-100"
+            src="7.jpg"
+          />
+          <Mask
+            className=""
+            overlay="black-light"
+            pattern=""
+            tag="div"
+          />
+        </View>
+        <CarouselCaption
+          tag="div"
+        >
+          <h3
+            className="h3-responsive"
+          >
+            Все оттенки твоих желаний
+          </h3>
+        </CarouselCaption>
+      </CarouselItem>
+    </CarouselInner>
+  </Carousel>
+</Container>
+`;

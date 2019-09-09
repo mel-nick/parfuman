@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component Footer component render 1`] = `
+<footer
+  className="makeStyles-footer-1"
+  id="footer"
+>
+  <Logo
+    footer={true}
+  />
+  <SocialNetworksList />
+  <p
+    className="makeStyles-footerSignWrap-2"
+  >
+    <span
+      className="makeStyles-footerPhone-4"
+    >
+      0-800-777-00-00
+    </span>
+    <span
+      className="makeStyles-footerEmail-5"
+    >
+      team@parfume.com
+    </span>
+    <span
+      className="makeStyles-footerYear-3"
+    >
+      © 2019
+    </span>
+  </p>
+</footer>
+`;

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdvantagesItem component AdvantagesItem component render 1`] = `
+<div
+  className="makeStyles-advantagesBlock-1"
+>
+  <span
+    className="makeStyles-advantagesLogo-2"
+  >
+    <FontAwesomeIcon
+      border={false}
+      className=""
+      fixedWidth={false}
+      flip={null}
+      icon={null}
+      inverse={false}
+      listItem={false}
+      mask={null}
+      pull={null}
+      pulse={false}
+      rotation={null}
+      size={null}
+      spin={false}
+      symbol={false}
+      title=""
+      transform={null}
+    />
+  </span>
+  <h4
+    className="makeStyles-advantagesTitle-3"
+  />
+  <p
+    className="makeStyles-advantagesDescription-4"
+  />
+</div>
+`;

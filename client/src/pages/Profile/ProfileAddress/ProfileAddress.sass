@@ -1,0 +1,68 @@
+$white: #fff
+$primary-black: #444
+$secondary-black-light: #999
+
+@mixin bottomBorder
+
+@mixin button($bg, $color)
+  background: $bg
+  color: $color
+
+.profileShippingAddress
+  color: $primary-black
+  &.expand
+    flex-direction: column
+    align-items: center
+    justify-content: center
+  &.toAdd
+    display: flex
+    justify-content: space-between
+  &-preview
+    color: $secondary-black-light
+    padding: 20px
+  .expandForm
+    @include button($white, $primary-black)
+
+  .profileShippingForm
+    width: 100%
+    &-fields
+      display: grid
+      grid-gap: 10px
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-areas: "firstname lastname" "address address" "city city" "email email" "phone phone"
+
+      .textField
+        &.firstname
+          grid-area: firstname
+        &.lastname
+          grid-area: lastname
+        &.address
+          grid-area: address
+        &.city
+          grid-area: city
+        &.email
+          grid-area: email
+        &.phone
+          grid-area: phone
+
+    &-buttons
+      display: flex
+      justify-content: flex-end
+      margin-top: 40px
+      button:first-child
+        @include button($white, $primary-black)
+        margin-right: 8px
+      button:last-child
+        color: $white
+
+
+@media (max-width: 599.5px)
+  .profileShippingAddress
+    &-preview
+      flex-direction: column
+      justify-content: center
+      align-items: flex-start
+      .profileShippingForm
+        &-fields
+          grid-template-columns: 1fr !important
+          grid-template-areas: "firstname" "lastname" "address" "city" "email" "phone" !important

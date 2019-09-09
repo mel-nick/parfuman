@@ -1,0 +1,118 @@
+.info-block {
+    &__title {
+        font-family: "Dosis",sans-serif;
+        font-weight: 500;
+        font-size: calcFluidSize(20, 28, 320, 768);
+        padding-bottom: calcFluidSize(20, 40, 320, 768);
+        border-bottom: 2px solid rgb(240, 240, 240);
+        margin-bottom: 25px;
+    }
+    &__price {
+        font-family: "Montserrat",sans-serif;
+        font-size: calcFluidSize(16, 20, 320, 768);
+        font-weight: 600;
+        &_crossed {
+            text-decoration: line-through;
+            font-style: italic;
+        }
+        &_sale {
+            font-size: calcFluidSize(18, 24, 320, 768);
+        }
+    }
+    &__description {
+        font-family: 'Montserrat', sans-serif;
+        font-size: calcFluidSize(11, 14, 320, 768);
+        line-height: calcFluidSize(20, 25, 320, 768);
+        margin-top: 25px;
+    }
+    &__brand {
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 35px;
+        font-size: calcFluidSize(11, 14, 320, 768);
+    }
+    &__code {
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 15px;
+        font-size: calcFluidSize(11, 14, 320, 768);
+    }   
+    &__price-container {
+        display: flex;
+        height: 50px;
+        width: calcFluidSize(200, 250, 320, 768);
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__sale-percent {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        padding: 7px 12px;
+        font-size: calcFluidSize(15, 20, 320, 768);
+        border: 2px solid red;
+        color: red;
+        box-sizing: border-box;
+    }
+}
+
+
+
+@media(min-width: 769px) {
+    .info-block {
+        &__title {
+            font-size: calcFluidSize(20, 28, 769, 1200);
+            padding-bottom: calcFluidSize(20, 40, 769, 1200);
+        }
+        &__price {
+            font-size: calcFluidSize(16, 20, 769, 1200);
+            &_sale {
+                font-size: calcFluidSize(18, 24, 320, 1200);
+            }
+        }
+        &__description {
+            font-size: calcFluidSize(11, 14, 769, 1200);
+            line-height: calcFluidSize(20, 30, 769, 1200);
+        }
+        &__brand {
+            font-size: calcFluidSize(11, 14, 769, 1200);
+        }
+        &__code {
+            font-size: calcFluidSize(11, 14, 769, 1200);
+        }   
+        &__price-container {
+            width: calcFluidSize(200, 250, 769, 1200);
+        }
+        &__sale-percent {
+            font-size: calcFluidSize(15, 20, 769, 1200);
+        }
+    }
+}
+
+@media(min-width: 1201px) {
+    .info-block {
+        &__title {
+            font-size: 28px;
+            padding-bottom: 40px;
+        }
+        &__price {
+            font-size: 20px;
+            &_sale {
+                font-size: 24px;
+            }
+        }
+        &__description {
+            font-size: 14px;
+            line-height: 30px;
+        }
+        &__brand {
+            font-size: 14px;
+        }
+        &__code {
+            font-size: 14px;
+        }   
+        &__price-container {
+            width: 250px;
+        }
+        &__sale-percent {
+          font-size: 20px;
+        }
+    }
+}

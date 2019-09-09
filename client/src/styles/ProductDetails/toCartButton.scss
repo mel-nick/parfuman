@@ -1,0 +1,61 @@
+.button{
+    display: flex;
+    font-family: "Dosis",sans-serif;
+    &_primary{
+        background-color: #fff;
+        border: 2px solid black;
+        color: black;
+        font-size: calcFluidSize(14, 19, 320, 768);
+        font-weight: 500;
+        padding: calcFluidSize(5, 15, 320, 768) calcFluidSize(16, 30, 320, 768);
+        line-height: 21px;
+        margin: 25px auto 15px;
+
+        &:hover {
+            color: gold;
+            border-color: gold;
+        }   
+    }
+}
+.icon-container {
+    margin-right: 10px;
+}
+.toast-wrapper {
+    color: rgb(19, 226, 19);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &_red{
+        color: red
+    }
+}
+.toast-text {
+    margin-left: 10px;
+    color: black;
+    font-style: italic;
+    font-weight: 700;
+}
+
+@media(min-width: 769px) {
+    .button{
+        &_primary{
+            font-size: calcFluidSize(14, 19, 769, 1200);
+            padding: 0 15px;
+            margin: 0 4%;
+            height: 100%;
+            cursor: pointer;
+            &:hover {
+                color: gold;
+                border-color: gold;
+            }   
+        }
+    }
+}
+
+@media(min-width: 1201px) {
+    .button{
+        &_primary{
+        font-size: 20px;
+        }
+    }
+}
