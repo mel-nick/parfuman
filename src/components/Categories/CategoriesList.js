@@ -56,7 +56,7 @@ class CategoriesList extends Component {
   }
 
   componentDidMount() {
-    axios.get('/categories')
+    axios.get('/api/categories')
       .then((res) => {
         this.setState({ products: res.data });
       })
