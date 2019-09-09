@@ -3,8 +3,10 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const config = require('./dbconfig/database');
 const passport = require('passport');
-const PORT = 5000;
+const path = require('path');
+const PORT = process.env.PORT || 8080;
 const app = express();
+
 
 // Note model
 const User = require('./dbmodels/user');
@@ -16,29 +18,19 @@ const Product = require('./dbmodels/product');
 // Cart model
 const Cart = require('./dbmodels/cart');
 
+// Serve static files from the React app
+app.use(express.static('build'));
+
 //passport
 app.use(passport.initialize());
 require('./passport')(passport);
-
-
-// app.param('alias', function (req, res, next, id) {
-//   // try to get the user details from the User model and attach it to the request object
-//   Product.find(id, function (err, user) {
-//     if (err) {
-//       next(err)
-//     } else if (code) {
-//       req.code = code
-//       next()
-//     } else {
-//       next(new Error('failed to load alias'))
-//     }
-//   })
-// })
-
-
-
 //mongoose connect
-mongoose.connect(config.database, { useNewUrlParser: true, useFindAndModify: false} );
+mongoose.connect(process.env.MONGODB_URI || config.database, { useNewUrlParser: true, useFindAndModify: false} );
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/build/index.html'));
+});
+
 
 // Mongoose connection
 const db = mongoose.connection;
