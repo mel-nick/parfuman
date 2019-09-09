@@ -8,7 +8,7 @@ export const fetchProducts = ()=>{
             dispatch({
                 type: FETCH_PRODUCT_START
             });
-            const products = await axios.get(`/api/categories`);
+            const products = await axios.get(`categories`);
 
             dispatch({
                 type: FETCH_PRODUCT_SUCCESS,

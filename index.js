@@ -41,7 +41,7 @@ db.on('error', function (err) {
 
 // parse application/json
 app.use(bodyParser.json());
-app.use('/api', require('./api'));
+app.use('/', require('./api'));
 
 app.listen(PORT, (req, res) => {
   console.log(`Server is listening on port: ${PORT}`)

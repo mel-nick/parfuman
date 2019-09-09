@@ -73,7 +73,7 @@ class App extends Component {
     // Get cart from database on load:
     if (this.props.auth.isAuthenticated) {
       const userId = this.props.auth.user.id;
-      axios.get('/api/cart/' + userId)
+      axios.get('cart/' + userId)
       .then(res => {
               this.props.dispatch(getDbCart(res.data.cartProducts));
               localStorage.setItem('parfumanCart', JSON.stringify(res.data.cartProducts));
@@ -88,7 +88,7 @@ class App extends Component {
     //Get cart from DB after login:      
     if (this.props.auth.isAuthenticated && !this.props.auth.isCartGeted) {
       const userId = this.props.auth.user.id
-      axios.get('/api/cart/' + userId)
+      axios.get('cart/' + userId)
       .then(res => {
           if (res.data) {
               this.props.dispatch(getDbCart(res.data.cartProducts));

@@ -9,7 +9,7 @@ export const fetchCategories = ()=>{
             dispatch({
                 type: FETCH_CATEGORIES_START
             });
-            const categories =  await axios.get(`/api/categories`);
+            const categories =  await axios.get(`categories`);
             dispatch({
                 type: FETCH_CATEGORIES_SUCCESS,
                 payload: categories.data

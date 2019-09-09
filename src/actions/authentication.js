@@ -14,8 +14,8 @@ import {
 import setAuthToken from '../setAuthToken';
 
 export const registerUser = (user, history) => (dispatch) => {
-  axios.post('/api/register', user)
-    .then(res => history.push('/api/login'))
+  axios.post('register', user)
+    .then(res => history.push('login'))
     .catch((err) => {
       dispatch({
         type: GET_ERRORS,
@@ -30,7 +30,7 @@ export const setCurrentUser = decoded => ({
 });
 
 export const loginUser = user => (dispatch) => {
-  axios.post('/api/login', user)
+  axios.post('login', user)
     .then((res) => {
       const { token } = res.data;
       localStorage.setItem('jwtToken', token);
@@ -55,20 +55,20 @@ export const logoutUser = history => (dispatch) => {
 
 
 export const changeAddresses = (data, user_id) => async dispatch => {
-  const res = await axios.post('/api/user_customize', { data, user_id })
+  const res = await axios.post('user_customize', { data, user_id })
   // console.log(res)
   const isSuccess = res.data.user_customize === 'success'
   dispatch({ type: CHANGE_USER_ADDRESSES, payload: {isSuccess, addresses: data.addresses }})
 }
 
 export const changeUserPassword = (data, user_id) => async dispatch => {
-  const res = await axios.post('/api/user_customize', { data, user_id })
+  const res = await axios.post('user_customize', { data, user_id })
   const isSuccess = res.data.user_customize === 'success'
   dispatch({ type: CHANGE_USER_PASSWORD, payload: isSuccess })
 }
 
 export const fetchUserAddresses = (user_id) => async dispatch => {
-  const res = await axios.post('/api/user_addresses', { user_id })
+  const res = await axios.post('user_addresses', { user_id })
   dispatch({ type: CHANGE_USER_ADDRESSES, payload: { addresses: res.data.addresses } })
 }
 
@@ -76,7 +76,7 @@ export const fetchUsersOrders = (user_id) => async dispatch => {
   dispatch({ type: FETCH_USERS_ORDERS + START })
   let res = {}
   try {
-    res = await axios.post('/api/user_orders', { user_id })
+    res = await axios.post('user_orders', { user_id })
   } catch (err) {
     dispatch({ type: FETCH_USERS_ORDERS + FAIL })
   }
