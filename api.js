@@ -171,6 +171,7 @@ router.delete("/users/:id", (req, res) => {
 router.post("/checkout", async (req, res) => {
     const { user_id, order, address, card } = req.body.data
 
+    console.log('order',order)
 
     const newOrder = new Order({
         address,
@@ -271,6 +272,8 @@ router.post("/user_orders", async (req, res) => {
 router.get('/cart/:userId', (req, res) => {
     Cart.findOne({userId: req.params.userId}, function(err, result){     
     if(err) return console.log(err);   
+    console.log("Cart is finded");
+    // console.log(req.params);
     res.send(result);
     });  
 });

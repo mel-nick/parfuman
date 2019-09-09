@@ -3,7 +3,7 @@ import { EMPTY_CART } from './types';
 
 export const submitCheckout = (data,onSuccess, onFail) => async dispatch =>{
   try {
-    await axios.post('checkout', { data })
+    await axios.post('/checkout', { data })
     .then(() => onSuccess('Спасибо за Ваш заказ!'))
     .then(() => dispatch({ type: EMPTY_CART }))
   } catch (err) {

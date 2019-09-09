@@ -346,7 +346,7 @@ class Products extends Component {
     }
 
     toggleBrandsList(upHeight, downHeight, containerId, titleId) {
-        // console.log(titleId);
+        console.log(titleId);
         const title = document.getElementById(titleId);
         const block = document.getElementById(containerId);
         block.classList.toggle('activeBlock');
@@ -397,7 +397,9 @@ class Products extends Component {
                             onClick={this.toggleBrandsList.bind(null, '605px', '50px', 'form-brand-container', 'form-brand-title')}
                             style={{backgroundImage: 'url(' + arrowDown + ')'}}>Бренды</h5>
                         <form className={this.props.classes.formBrandsList} id='brand-form'>
+                            {/*{R.sortBy(R.prop('brand'), products).map((product) => this.renderBrand(product))}*/}
                             {R.uniqBy(R.prop('brand'), sortedProducts).map((product) => this.renderBrand(product))}
+                            {/*{R.pipe(console.log('lsdjf'), R.uniqBy(R.prop('brand'), products)).map((product) => this.renderBrand(product))}*/}
                         </form>
                     </div>
                 </div>
@@ -407,6 +409,7 @@ class Products extends Component {
                         .filter(filter.filter).map((product) => this.renderProduct(product))}
                 </div>
             </div>
+            // </div>
         )
     };
 }

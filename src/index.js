@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import {deepOrange} from "@material-ui/core/colors";
 import {Provider} from 'react-redux';
 import store from './store';
+// import {orange} from "@material-ui/core/colors";
 
 
 
@@ -18,7 +19,10 @@ const theme = createMuiTheme({
             dark: grey[900],
             contrastText: grey[300],
         },
-       
+        // secondary: {
+        //     main: blue[500],
+        //     light: blue[200],
+        // }
         secondary: {
             main: orange[500],
             light: orange[200],

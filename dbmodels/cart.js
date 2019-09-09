@@ -40,7 +40,7 @@ const cartSchema = new Schema({
       }    
     }
   ],  
-});
+});// { versionKey: false }
 
 //создаем модель корзины:
 const Cart = mongoose.model("Cart", cartSchema);

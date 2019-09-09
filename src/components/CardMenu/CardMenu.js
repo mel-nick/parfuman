@@ -56,7 +56,7 @@ const useStyles = makeStyles(theme => ({
         position: 'relative',
         height: 300,
         [theme.breakpoints.down('xs')]: {
-            width: '100% !important', 
+            width: '100% !important', // Overrides inline-style
             height: 200,
         },
         marginTop: '20px',
@@ -93,7 +93,10 @@ const useStyles = makeStyles(theme => ({
         bottom: 0,
         backgroundSize: 'cover',
         backgroundPosition: 'center 40%',
+        // backgroundImage: 'url(' + images.url + ');',
+        // backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
+        // backgroundPosition: 'top'
     },
     imageBackdrop: {
         position: 'absolute',
@@ -104,6 +107,7 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: theme.palette.common.black,
         opacity: 0.4,
         transition: theme.transitions.create('opacity'),
+        // marginTop: '20px'
     },
     imageTitle: {
         position: 'relative',
@@ -159,6 +163,42 @@ export default function CardMenu() {
                 </Link>
             ))}
         </div>
-       
+        // <Link to={'#!'}>
+        //     <div className={classes.root}>
+        //         {images.map(image => (
+        //             <ButtonBase
+        //                 focusRipple
+        //                 key={image.title}
+        //                 className={classes.image}
+        //                 focusVisibleClassName={classes.focusVisible}
+        //                 style={{
+        //                     width: image.width,
+        //                 }}
+        //             >
+        //                 <span
+        //                     className={classes.imageSrc}
+        //                     style={{
+        //                         backgroundImage: `url(${image.url})`,
+        //                         // backgroundSize: 'cover',
+        //                         // backgroundRepeat: 'no-repeat',
+        //                         // backgroundPosition: 'top'
+        //                     }}
+        //                 />
+        //                     <span className={classes.imageBackdrop}/>
+        //                     <span className={classes.imageButton}>
+        //                 <Typography
+        //                     component="span"
+        //                     variant="subtitle1"
+        //                     color="inherit"
+        //                     className={classes.imageTitle}
+        //                 >
+        //                     {image.title}
+        //                     <span className={classes.imageMarked}/>
+        //                 </Typography>
+        //                  </span>
+        //             </ButtonBase>
+        //         ))}
+        //     </div>
+        // </Link>
     );
 }

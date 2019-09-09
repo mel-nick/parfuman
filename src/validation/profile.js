@@ -8,7 +8,7 @@ export const profile = (data) => {
   if (!newpassword) {
     errors.newpassword = 'Password is required'
   } else if (newpassword.length < 6) {
-    // console.log(newpassword);
+    console.log(newpassword);
     errors.newpassword = 'Password must have 6 chars'
   }
 

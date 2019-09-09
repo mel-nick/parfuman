@@ -3,6 +3,7 @@ import {Provider} from 'react-redux';
 import {BrowserRouter, Route} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import {makeStyles} from '@material-ui/core/styles';
+// import TextField from '@material-ui/core/TextField';
 import Box from '@material-ui/core/Box';
 import AccountBox from '@material-ui/icons/AccountBox';
 import Logo from '../Logo/Logo';
@@ -14,6 +15,7 @@ import store from "../../store";
 import Register from "../Register";
 import withStyles from "@material-ui/core/styles/withStyles";
 import ContactInfo from '../ContactInfo/ContactInfo'
+// import { fetchCategories } from '../../actions/categories';
 import {connect} from 'react-redux';
 import {fetchProducts} from '../../actions/products';
 import {fetchCategories} from '../../actions/categories';
@@ -49,7 +51,28 @@ const styles = (theme) => ({
         position: 'relative',
         zIndex: '3'
     },
-       '@media (max-width: 767px)': {
+    // textField: {
+    //     position: 'relative',
+    //     right: '100px',
+    //     '&:hover': {},
+    //
+    //     '&:focused': {
+    //         backgroundColor: '#fff',
+    //         borderColor: 'rgba(52, 173, 1, 1)',
+    //     },
+    // },
+    // accountIcon: {
+    //     position: 'relative',
+    //     right: '65px',
+    //     cursor: 'pointer',
+    //     color: theme.palette.primary.dark
+    // },
+
+    // icon: {
+    //     backgroundColor: 'blue'
+    // },
+
+    '@media (max-width: 767px)': {
         header: {
             height: '100px',
             padding: '5px 20px',
@@ -70,12 +93,31 @@ class Header extends Component {
 
 
     render() {
-        
+        // window.onscroll = () => {
+        //     if (window.innerWidth > 767) {
+        //         if (window.pageYOffset > 45) {
+        //             document.querySelector('#header').style.height = '100px';
+        //         } else {
+        //             document.querySelector('#header').style.height = '160px';
+        //         }
+        //     } else {
+        //         document.querySelector('#header').style.height = '100px';
+        //     }
+        //     console.log(window.innerWidth);
+        // };
         return (
             <header className={this.props.classes.header} id='header'>
                 <Box className={this.props.classes.containerBox} display="flex" alignItems="center">
 
-                    
+                    {/*'url(' + photo.url + ')'*/}
+                    {/*<TextField*/}
+                    {/*    component='div'*/}
+                    {/*    id="filled-search"*/}
+                    {/*    label="Search field"*/}
+                    {/*    type="search"*/}
+                    {/*    className={classes.textField}*/}
+                    {/*    margin="normal"*/}
+                    {/*/>*/}
                     <SearchInput/>
                     <Logo img={`url("client/src/components/Logo/main-logo.png");`}/>
                     <div className={this.props.classes.optionIconWrap}>
@@ -100,4 +142,5 @@ const mapStateToProps = (state, ownProps) => ({
 });
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Header));
 
+// export default withStyles(styles)(Header)
 
