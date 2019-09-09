@@ -54,9 +54,6 @@
   },
   "scripts": {
     "build": "react-scripts build",
-    "heroku-prebuild": "npm-run-all -p build server",
-    "heroku-postbuild": "app",
-    "app":"cd ./build && start",
     "start": "react-scripts start",
     "server": "node index.js",
     "dev": "npm-run-all -p server start",
