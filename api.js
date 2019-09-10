@@ -138,7 +138,7 @@ router.get('/me', passport.authenticate('jwt', { session: false }), (req, res) =
     });
 });
 
-router.get("/categories", (req,res)=>{
+router.get("/api/categories", (req,res)=>{
   Product.find({})
     .then(product => res.send(product) );
 });
@@ -272,7 +272,7 @@ router.post("/user_orders", async (req, res) => {
 router.get('/cart/:userId', (req, res) => {
     Cart.findOne({userId: req.params.userId}, function(err, result){     
     if(err) return console.log(err);   
-    console.log("Cart is finded");
+    // console.log("Cart is finded");
     // console.log(req.params);
     res.send(result);
     });  
