@@ -14,14 +14,14 @@ app.use(bodyParser.json());
 app.use('/', require('./api'));
 
 //mongoose connect
-mongoose.connect(MONGODB_URI || config.database, { useNewUrlParser: true, useFindAndModify: false} );
+mongoose.connect(process.env.MONGODB_URI || config.database, { useNewUrlParser: true, useFindAndModify: false} );
 
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, "./client/build")));
+app.use(express.static(path.join(__dirname, "/client/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "./client/build/index.html"));
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
   });
 
 // Note model
