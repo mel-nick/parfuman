@@ -16,7 +16,7 @@ app.use('/', require('./api'));
 // Serve static files from the React app
 
 //mongoose connect
-mongoose.connect(config.database, { useNewUrlParser: true, useFindAndModify: false} );
+mongoose.connect(MONGODB_URI || config.database, { useNewUrlParser: true, useFindAndModify: false} );
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/build/index.html'));
