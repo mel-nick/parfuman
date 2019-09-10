@@ -138,14 +138,14 @@ router.get('/me', passport.authenticate('jwt', { session: false }), (req, res) =
     });
 });
 
-router.get("/categories/", (req,res)=>{
+router.get("/categories", (req,res)=>{
   Product.find({})
     .then(product => res.send(product) );
 });
-router.get("/categories/:alias", (req,res)=>{
-    Product.find({ alias: req.params.alias })
-    .then(product => res.send(product) );
-});
+// router.get("/categories/:alias", (req,res)=>{
+//     Product.find({ alias: req.params.alias })
+//     .then(product => res.send(product) );
+// });
 
 // post prod
 router.post("/addprod", (req,res)=>{
