@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const config = require('./dbconfig/database');
+//const config = require('./dbconfig/database');
 const passport = require('passport');
 const path = require('path');
 
@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use('/', require('./api'));
 
 //mongoose connect
-mongoose.connect(process.env.MONGODB_URI || config.database, { useNewUrlParser: true, useFindAndModify: false} );
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useFindAndModify: false} );
 
 
 // Serve static files from the React app
